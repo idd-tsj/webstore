@@ -1,0 +1,79 @@
+/****top navigation******/
+.colour-bar {
+    background-color: rgb(172, 177, 113);
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: underline;
+}
+.first-nav{
+    display: grid;
+    grid-template-columns: 85% 10% 5%;
+    margin: 1em;
+}
+
+.company-name {
+    color: rgb(172, 177, 113);
+    font-size: 2em;
+}
+
+.company-name a {
+    margin: 0.5em;
+}
+
+.second-nav{
+    display:grid;
+    grid-template-columns: 10% 95% 5%;
+    align-content: right;
+}
+
+.search-field{
+    background-color:lightgrey;
+    border-style: 0.25em;
+    border-radius:1em;
+    padding:0.5em;
+    margin:0.25em;
+    width:90%
+}
+.filter-section{
+    visibility: hidden;
+}
+
+
+/**********product section************/
+.products {
+    display: grid;
+    grid-gap: 1em;
+  }
+  
+  .grid-view {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  
+  .product {
+    background-color: #fff;
+    padding: 0 1em;
+    /* margin: 1em 0; */
+    overflow: hidden;
+    box-shadow: 0 0 1em rgba(0,0,0,0.4);
+  }
+  
+  .product-name {
+    text-transform: uppercase;
+    color: #666;
+  }
+  
+  .product-image {
+    width: 12em;
+  }
+  
+  .grid-view .product-info {
+    display: none;
+  }
+  
+  .Black-Tea {
+    border-left: 0.5em solid rgb(37, 5, 1);
+  }
+  .Green-Tea {
+    border-left: 0.5em solid rgb(22, 80, 8);
+  }
