@@ -14,7 +14,7 @@ const products = [
       id: '02',
       name: `Cream of Earl Grey`,
       image: 'img/cream-of-earl-grey-tea.jpg',
-      description: 'One of the most popular tea blends in the world. It is a mix of black tea, bergamot and lavender and vanilla .',
+      description: 'One of the most popular tea blends in the world. It is a mix of black tea, bergamot and lavender and vanilla.',
       price: `$12.99`,
       quantity: `8`,
       caffinated: `yes`,
@@ -94,7 +94,6 @@ const products = [
       }
 ]
 
-
 /************* FUNCTIONS *************/
 
 function getProductHtmlString(product) {
@@ -130,6 +129,6 @@ function toggleLayoutView() {
 }
 
 /************* EXECUTABLE *************/
-renderCourses(products);
+renderProducts(products);
 
 document.getElementById('layout').addEventListener('click', event => toggleLayoutView())
