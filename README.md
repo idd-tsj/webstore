@@ -132,3 +132,34 @@ For example, consider something like product "states". If a product is low on qu
 
 Experiment with other sites and applications that sell products. Start thinking like a user - what's required to make this interface most usable or most unique?
 
+
+
+//conditions
+- "this block of executable is contingent on something being true or false"
+- "under these conditions this happens or nothing"
+//filtering
+//UI Input from Users
+
+//Boolean is a true or false (0 or 1)
+// Numbers < <= > >= (only usefull with conditions)
+
+//if (/* true or false*/){
+    console.log('It's too fucking cold');
+} else if (temp > 15 ) { 
+    console.log('It's reasonably warm');
+} else {
+    console.log('At least it's not freezing');
+}
+
+
+
+//function less Than Five(num) {
+    if (num <5) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+chaining filters:
+/numbers.filter(lessThanFive).filter(grtrThanZero)

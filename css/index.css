@@ -1,4 +1,7 @@
-/****top navigation******/
+/*****GOOGLE FONTS ****/
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Kalam|Neucha&display=swap');
+
+/****TOP NAVIGATION******/
 .colour-bar {
     background-color: rgb(172, 177, 113);
     padding: 0.5em;
@@ -35,11 +38,10 @@
     width:90%
 }
 .filter-section{
-    visibility: hidden;
 }
 
 
-/**********product section************/
+/**********PRODUCT SECTION************/
 .products {
     display: grid;
     grid-gap: 1em;
@@ -60,7 +62,10 @@
   
   .product-name {
     text-transform: uppercase;
-    color: #666;
+    color: rgb(172, 177, 113);
+    font-size: 3em;
+    margin:0.5em;
+    text-align: center;
   }
   
   .product-image {
@@ -70,10 +75,28 @@
   .grid-view .product-info {
     display: none;
   }
-  
+
+.product-info {
+  text-align: center;
+  font-size:1.5em;
+  margin-bottom: 1em;
+  background-color:lightgrey;
+}
+
+.product-description {
+  background-color: white;
+  padding-bottom: 1em;
+  font-size: 1.5em;
+  font-family: Alegreya;
+}
+
+/***** CATEGORIZED BY COLOUR *******/
   .Black-Tea {
     border-left: 0.5em solid rgb(37, 5, 1);
   }
   .Green-Tea {
     border-left: 0.5em solid rgb(22, 80, 8);
   }
+
+  /******* SALE ***********/
+  /*** add a small sale sign on specific items ****/
