@@ -94,7 +94,7 @@ const products = [
       }, {
       id: `11`,
       name: `Honey Vanilla`,
-      image: `img/honey-vanilla-rooibos.jpg`,
+      image: `img/honey-vanilla-rooibos.png`,
       description: `A wonderful rooibos tea with a sweet vanilla finish.`,
       price: 5.00,
       quantity: 12,
@@ -157,7 +157,7 @@ const products = [
       }, {
       id: `18`,
       name: `Spiced Rooibus Chai`,
-      image: `img/spiced-rooibus-chai`,
+      image: `img/spiced-rooibus-chai.jpg`,
       description: `A great decaf alternative to a cup of traditional chai. Tastes warm and spicy!`,
       price: 4.99,
       quantity: 24,
@@ -201,10 +201,22 @@ function getProductHtmlString(product) {
             </article>`;
 }
 
-function renderProducts(arr) {
+function renderProducts(productsToRender) {
+    //* 0. Sort by Price
+    var sortedProducts=productsToRender;
+    const sortTerm = document.getElementById('sort').value;
+    console.debug(sortTerm);
+    switch (sortTerm) {
+      case 'price-high': 
+        sortedProducts = productsToRender.concat().sort((productA, productB) => productB.price-productA.price);
+        break;
+      case 'price-low':
+        sortedProducts = productsToRender.concat().sort((productA, productB) => productA.price-productB.price);
+        break;
+    }
 
     //* 1. map() Array to a new Array
-    const arrOfHtml = arr.map(getProductHtmlString);
+    const arrOfHtml = sortedProducts.map(getProductHtmlString);
   
     //* 2. join() Array into a String
     const strOfHtml = arrOfHtml.join('\n');
@@ -214,45 +226,61 @@ function renderProducts(arr) {
   
 }
   
-
-
 /************* EXECUTABLE *************/
 /*renderProducts(products);*/
 
 renderProducts(products);
 
 document.getElementById('layout').addEventListener('click', event => toggleLayoutView())
-
-
-/*****************FILTER BY COST***************/
-function lowCostProducts(p) {
-  return p.price < 10.00;
-}
-
-const arrLowCosties = products.filter(lowCostProducts);
-renderProducts(arrLowCosties);
-
-
+document.getElementById('sort').addEventListener('change', event =>renderProducts(products));
 
 /* ******Filter by Caffeine******** */
-function filterByCaff(p) {
-  return p.caffinated;
+
+function searchByCaff(event) {
+  var arrCaffCheck = products;
+  const searchTerm = event.target.value;
+  switch (searchTerm) {
+    case 'caffeinated': 
+        arrCaffCheck = products.filter(product => product.caffinated==true);
+      break;
+    case 'uncaffeinated':
+        arrCaffCheck = products.filter(product => product.caffinated==false);
+      break;
+  }
+  renderProducts(arrCaffCheck);
+}
+document.getElementById('caffSearch').addEventListener('change', searchByCaff);
+
+/* ********FILTER BY TYPE********* */
+
+function searchByType(event) {
+  var arrTypeCheck = products;
+  const searchTerm = event.target.value;
+  console.debug(searchTerm);
+  if (searchTerm != 'all') {
+    arrTypeCheck = products.filter(product => product.type==searchTerm);
+  }
+  renderProducts(arrTypeCheck);
+}
+document.getElementById('typeSearch').addEventListener('change', searchByType);
+
+renderProducts(products);
+
+/* ****FILTER BY NAME****** */
+
+function searchByName(event) {
+  var filteredProducts = products;
+  const searchTerm = event.target.value;
+  console.debug(searchTerm);
+  if (searchTerm.trim() != '') {
+    filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm.trim().toLowerCase()));
+  }
+  renderProducts(filteredProducts);
 }
 
-const arrcaffTea = products.filter(filterByCaff);
+document.getElementById('find').addEventListener('input', searchByName)
 
-renderProducts(arrcaffTea);
-
-/********FILTER BY TYPE */
-//document.getElementById('typeSearch').addEventListener('change',searchbyType)
-
-
-
-/*****FILTER BY NAME*******/
-
-//******TOGGLE VIEW******* *//
-
-
+/******TOGGLE VIEW******* */
 
 function toggleLayoutView() {
   document.getElementById('products').classList.toggle('grid-view')

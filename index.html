@@ -46,69 +46,30 @@
           <fieldset>
             <label for="sort">Show</label>
             <select name="sort" id="sort">
+              <option value="unsorted">-</option>
               <option value="price-high">Price, highest to lowest</option>
               <option value="price-low">Price, lowest to highest</option>
             </select>
           </fieldset>
-          <fieldset>
-            <legend>Caffeine</legend>
-            <ul>
-              <li><input type="checkbox" name="caffinated" value="caffinated" id="caffinated"> <label for="caffinated">Caffinated</label></li>
-              <li><input type="checkbox" name="uncaffinated" value="uncaffinated" id="uncaffinated"> <label for="uncaffinated">Uncaffinated</label></li>
-            </ul>
-          </fieldset>
-          <fieldset>
-            <legend>Tea Type</legend>
-            <ol>
-              <li><input type="checkbox" name="type" value="green" id="green"> <label for="green">Green</label></li>
-              <li><input type="checkbox" name="type" value="black" id="black"> <label for="black">Black</label></li>
-              <li><input type="checkbox" name="type" value="oolong" id="oolong"> <label for="md">Oolong</label></li>
-              <li><input type="checkbox" name="type" value="herbal" id="herbal"> <label for="lg">Herbal</label></li>
-              <li><input type="checkbox" name="type" value="rooibus" id="rooibus"> <label for="rooibus">Rooibus</label></li>
-            </ol>
-          </fieldset>
-
+          <div> 
+              <label for="caffSearch">Caffeine:</label>
+              <select name="categoryCaff" id="caffSearch">
+                <option value="all" selected>See All</option>
+                <option value="caffeinated">Caffeinated</option>
+                <option value="uncaffeinated">Uncaffeinated</option>
+              </select>
+          </div>
           <div>
-            <label for="typeSearch">Type:</label>
-            <select name="typeSearch"></select>
-              <option value="0" disabled selected>-Select A Category-</option>
+            <label for="typeSearch">Type of Tea:</label>
+            <select name="typeName" id="typeSearch">
+              <option value="all" selected>See All</option>
               <option value="Green-Tea">Green Tea</option>
               <option value="Black-Tea">Black Tea</option>
-              <option value="Oolong">Oolong</option>
               <option value="Rooibos">Rooibos</option>
+              <option value="Oolong">Oolong Tea</option>
               <option value="Herbal">Herbal</option>
+            </select>
           </div>
-
-
-          <fieldset>
-            <legend>Ratings (above)</legend>
-            <ol>
-              <li>
-                <input type="radio" name="rating" value="4" id="aboveFour">
-                <label for="aboveFour">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="3" id="aboveThree">
-                <label for="aboveThree">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="2" id="aboveTwo">
-                <label for="aboveTwo">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="1" id="aboveOne">
-                <label for="aboveOne">
-                  <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-            </ol>
-          </fieldset>
         </form>
       </header>
 
