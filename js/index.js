@@ -193,11 +193,12 @@ function getProductHtmlString(product) {
               <img src="${product.image}" alt="image of ${product.name}" class="product-img">
               <ul class="product-info">
                 <li class="product-description"> ${product.description}</li>
-                <li class="product-price">Price: <strong>${product.price}</strong></li>
+                <li class="product-price">Price: <strong>$${product.price}</strong></li>
                 <li>Quantity in Stock: <strong>${product.quantity}</strong></li>
-                <li>Caffinated: <stong>${product.caffinated}</strong></li>
-                <li>Type: <strong>${product.type}</strong></li>
               </ul>
+              <div class="add-to-cart">
+                <p>Add to Cart</p>
+              </div>
             </article>`;
 }
 

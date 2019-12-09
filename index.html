@@ -38,31 +38,28 @@
 
     <main>
       <header>
-        <h1>Sale on Herbal Tea</h1>
-
         <!-- Filtering product form -->
         <form class=filter-section>
-          <h2>Filters</h2>
           <fieldset>
-            <label for="sort">Show</label>
+            <label for="sort"></label>
             <select name="sort" id="sort">
-              <option value="unsorted">-</option>
+              <option value="unsorted">Pricing</option>
               <option value="price-high">Price, highest to lowest</option>
               <option value="price-low">Price, lowest to highest</option>
             </select>
           </fieldset>
           <div> 
-              <label for="caffSearch">Caffeine:</label>
+              <label for="caffSearch"></label>
               <select name="categoryCaff" id="caffSearch">
-                <option value="all" selected>See All</option>
+                <option value="all" selected>Caffeine</option>
                 <option value="caffeinated">Caffeinated</option>
                 <option value="uncaffeinated">Uncaffeinated</option>
               </select>
           </div>
           <div>
-            <label for="typeSearch">Type of Tea:</label>
+            <label for="typeSearch"></label>
             <select name="typeName" id="typeSearch">
-              <option value="all" selected>See All</option>
+              <option value="all" selected>Type</option>
               <option value="Green-Tea">Green Tea</option>
               <option value="Black-Tea">Black Tea</option>
               <option value="Rooibos">Rooibos</option>
@@ -72,30 +69,16 @@
           </div>
         </form>
       </header>
+      <div class="colour-bar">    </div>
 
       <section>
-        <h2>Products</h2>
+        <h2>Nothing less than a perfect cup.</h2>
         <button id="layout">Change Layout</button>
         <section id="products" class="products"></section>
       </section>
-
-      </section>
-      <footer>
-        <p>1-5 of 20 products found</p>
-        <nav aria-label="Product Pages">
-          <a href="#" aria-label="Previous page">prev</a>
-          <ol>
-            <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-            <li><a href="#" aria-label="Page 2">2</a></li>
-            <li><a href="#" aria-label="Page 3">3</a></li>
-            <li><a href="#" aria-label="Page 4">4</a></li>
-          </ol>
-          <a href="#" aria-label="Next page">next</a>
-        </nav>
-      </footer>
     </main>
 
-    <footer>
+    <footer class="page-footer">
       <p>&copy; Copyright, 2019.</p>
       <nav aria-label="Legal">
         <ul>
@@ -104,7 +87,7 @@
           <li><a href="#">Accessibility Policy</a></li>
         </ul>
       </nav>
-      <ul>
+      <ul class="social-media-icons">
         <li><a href="#"><span class="material-icons">face</span> Facebook</a></li>
         <li><a href="#"><span class="material-icons">camera_alt</span> Instagram</a></li>
         <li><a href="#"><span class="material-icons">alternate_email</span> Twitter</a></li>
